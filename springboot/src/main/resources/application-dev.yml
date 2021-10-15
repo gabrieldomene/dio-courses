@@ -1,0 +1,14 @@
+#DEV enviornment
+
+app:
+  message: This is the property file for the ${spring.application.name} specific to DEV environment
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+    username: dev
+    password: devpass

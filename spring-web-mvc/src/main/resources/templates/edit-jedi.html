@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jedi</title>
+</head>
+<body>
+
+<h1>Edit Jedi</h1>
+
+<form th:action="@{/jedi}" th:object="${jedi}" method="post">
+  <input type="hidden" name="id" th:field="*{id}" />
+  <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+
+  <input type="text" name="name" th:field="*{name}" th:placeholder="Name" /> <br/>
+  <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">LastName Error</span>
+  <br/>
+  <button type="submit">Update Jedi</button>
+</form>
+
+<br/>
+<a th:href="@{/jedi}"></a>
+
+</body>
+</html>
